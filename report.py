@@ -39,7 +39,7 @@ class report:
                         'scraped_date':str(row[12])
                     }
                     dict_list.append(row_dict)
-                with open(csv_name, 'w', encoding="utf-8") as f:  
+                with open("weekly-reports/"+csv_name, 'w', encoding="utf-8") as f:  
                     writer = csv.DictWriter(f,delimiter =",", fieldnames=row_dict.keys())
                     writer.writeheader()
                     for elem in dict_list:
