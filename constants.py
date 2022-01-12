@@ -27,7 +27,9 @@ on dis.source_id = sou.source_id \
 inner join item as item \
 on item.id_dispensary = dis.id \
 where item.created >= 'initial_date' and item.created <= 'end_date' and sou.description = 'source_page' \
-order by dis.name ASC;"
+order by dis.name ASC;",
+    'danblack-clean-dispensary' : "DELETE FROM danblack2.dispensary WHERE dispensary.created <= 'date';",
+    'danblack-clean-item' : "DELETE FROM danblack2.item WHERE item.created <= 'date';"
 }
 
 

@@ -72,6 +72,14 @@ class ASMysql:
             except Exception as e:
                 raise Exception (f"ASMysql update(): {e}")
 
+    def delete(self, query ,connection):
+        with connection.cursor() as cursor:
+            try:
+                cursor.execute(query)
+                connection.commit()
+            except Exception as e:
+                raise Exception (f"ASMysql update(): {e}")
+
     def sp(self, sp_name, data_list):
 
             try:

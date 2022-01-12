@@ -14,9 +14,8 @@ class report:
                                          DB_Credentials['dan-black']['password'],
                                          DB_Credentials['dan-black']['port'])
 
-    def query(self, query, csv_name):
+    def query_report(self, query, csv_name):
         
-
         try:
             dict_list = []
             self.__logger.info(f"Generating report: {csv_name}")
@@ -47,5 +46,14 @@ class report:
                 self.__logger.info(f"Report: {csv_name} finished")
             else:
                 self.__logger.info(f"There is not data match for input parameters")
+        except Exception as e:
+            self.__logger.error(f"error: {e}")
+
+    def query_clean_db(self,query):
+        try:
+            self.__logger.info("Deleting old rows with: " + query)
+            self.__mysql_obj.delete(query ,self.__mysql_obj.get_connection())
+            self.__logger.info("Deleted successfully")
+
         except Exception as e:
             self.__logger.error(f"error: {e}")
