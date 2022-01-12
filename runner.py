@@ -13,8 +13,15 @@ query = Querys['danblack']
 query_buddi = query.replace('source_page', 'buddi').replace('initial_date', initial_date).replace('end_date', end_date)
 query_leafly = query.replace('source_page', 'leafly').replace('initial_date', initial_date).replace('end_date', end_date)
 query_dutchie = query.replace('source_page', 'dutchie').replace('initial_date', initial_date).replace('end_date', end_date)
+query_fireAndFlowers = query.replace('source_page', 'fire & flower').replace('initial_date', initial_date).replace('end_date', end_date)
+query_valuebuds = query.replace('source_page', 'Value buds').replace('initial_date', initial_date).replace('end_date', end_date)
+
 
 report.report().query(query_dutchie,'dutchie - '+end_date.replace(':','-')+'.csv')
 report.report().query(query_leafly,'leafly - '+end_date.replace(':','-')+'.csv')
 report.report().query(query_buddi,'buddi - '+end_date.replace(':','-')+'.csv')
+#report.report().query(query_fireAndFlowers,'fire & flower - '+end_date.replace(':','-')+'.csv')
+report.report().query(query_valuebuds,'Value buds - '+end_date.replace(':','-')+'.csv')
+
+
 

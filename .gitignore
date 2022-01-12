@@ -274,6 +274,8 @@ dmypy.json
 # extras
 */Log
 Log
+*/weekly-reports
+*.csv
 
 # temp files
 Crawlers/*/tmp/
